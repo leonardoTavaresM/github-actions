@@ -26,5 +26,5 @@ jobs:
         # Runs a single command to Deploy
       - name: Run Deploy
         run: |
-          export VERCEL_TOKEN=${{ secrets.VERCEL_TOKEN }}
+          yarn install
           yarn deploy:prod
