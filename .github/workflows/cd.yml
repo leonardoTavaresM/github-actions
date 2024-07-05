@@ -7,7 +7,7 @@ name: "CD (Continuous Delivery) Main Workflow"
 
 on:
   push:
-    branches: [main, feat/first-actions]
+    branches: [main, feat/first-actions, feat/second-actions]
 
 jobs:
   deploy:
