@@ -1,5 +1,10 @@
 name: "CI (Continuous Integration) Main Workflow"
 
+env:
+  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
 on:
   pull_request:
     types: [opened, reopened, synchronize]
@@ -17,3 +22,12 @@ jobs:
       # Runs a single command
       - name: Run Linter
         run: yarn lint
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Installation
+        run: yarn install
+      # Runs a single command
+      - name: Run Preview Deployment
+        run: yarn deploy:preview
