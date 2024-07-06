@@ -1,6 +1,5 @@
 {
   "name": "github-actions-front",
-  "type": "module",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -18,7 +17,7 @@
     "lint:fix": "next lint --fix",
     "deploy:prod": "yarn deploy:staging --prod",
     "deploy:staging": "yarn build && npx vercel ./build --confirm --no-clipboard --token=$VERCEL_TOKEN",
-    "deploy:preview": "node ./scripts/pullRequestPreview"
+    "deploy:preview": "node ./scripts/pullRequestPreview.mjs"
   },
   "devDependencies": {
     "eslint": "8.17.0",
